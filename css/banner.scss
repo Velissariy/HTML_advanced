@@ -1,0 +1,40 @@
+@import "vars";
+@import "mixins";
+
+.banner {
+  background-color: $bannerBackgroundColor;
+
+  .bigContainer {
+    @include flexCenter();
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin: 0 auto;
+    gap: 0;
+    position: relative;
+  }
+
+  &__rightSide {
+    min-width: 800px;
+    padding-left: 60px;
+  }
+
+  &__texts {
+    color: #222;
+    @include fontStyle1(900);
+    font-size: 48px;
+    border-left: 12px solid $exclusiveColor;
+    padding-left: 16px;
+  }
+
+  &__text1 {
+    color: #222;
+    @include fontStyle1(700);
+    font-size: 32px;
+  }
+
+  &__text2 {
+    color: $exclusiveColor;
+    @include fontStyle1(700);
+    font-size: 32px;
+  }
+}
