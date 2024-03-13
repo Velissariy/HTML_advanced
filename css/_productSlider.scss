@@ -30,6 +30,7 @@
     .carousel-inner {
       .carousel-item {
         @include flexCenter();
+        height: 777px;
       }
     }
   }
@@ -38,8 +39,25 @@
     transition: opacity 1s !important;
 
     img {
-      height: 777px;
+      max-height: 777px;
       padding-bottom: 60px;
+    }
+  }
+}
+
+@media (max-width: 1140px) {
+  .productSlider {
+    .bigContainer {
+      height: 624px;
+    }
+
+    .carousel-item {
+      transition: opacity 1s !important;
+
+      img {
+        max-height: 624px;
+        padding-bottom: 0;
+      }
     }
   }
 }

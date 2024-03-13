@@ -1,19 +1,21 @@
 @import "vars";
 @import "mixins";
 
-.description {
-  @include fontStyle1(300);
+.productDescription {
+  @include fontStyle1(300, 14px);
 
   .container {
     position: relative;
-    min-height: 550px;
+    min-height: 600px;
+    padding: 0;
   }
 
   &__content {
     width: 100%;
     position: absolute;
     border: 2px solid rgb(234, 234, 234);
-    padding: 65px;
+    padding-top: 65px;
+    padding-bottom: 65px;
 
     @include flexCenter();
     flex-direction: column;
@@ -55,32 +57,87 @@
 
   &__line2 {
     height: 1px;
-    width: 642px;
+    width: 60%;
     background-color: #EAEAEA;
     margin: 65px 0 65px;
   }
 
-  &__filter {
-    font-size: 14px;
-    color: rgb(111, 110, 110);
-    width: 50%;
+  .filter {
+    &__menuSize {
+      width: 80px;
+    }
+  }
+
+  &__button {
+    cursor: pointer;
+    min-width: 139px;
+    padding-top: 11px;
+    padding-bottom: 8px;
     @include flexCenter();
+    flex-wrap: nowrap;
     justify-content: space-evenly;
-  }
-
-  &__filterItem summary::after {
-    content: url("../img/filter_icon.svg");
-  }
-
-  &__filterItem summary{
-    @include flexCenter();
-    gap: 10px;
-  }
-
-  .feturedItems_button {
-    margin-top: 48px;
     color: $exclusiveColor;
-    border-color: $exclusiveColor;
+    border: 1px solid $exclusiveColor;
+    @include fontStyle1(400, 14px);
     width: 212px;
+    margin-top: 50px;
+    transition: background-color 0.5s ease;
+
+    p {
+      margin: 0;
+    }
+  }
+
+  &__button:hover {
+    background-color: $exclusiveColor;
+    transition: background-color 0.5s ease;
+    color: #FFF;
+
+    svg {
+      path {
+        fill: #FFF;
+      }
+    }
+  }
+}
+
+@media (max-width: 1140px) {
+  .productDescription {
+
+    &__content {
+      top: 0;
+      position: relative;
+    }
+  }
+}
+
+@media (max-width: 570px) {
+  .productDescription {
+
+    &__text {
+      margin-top: 24px;
+      width: 100%;
+    }
+
+    &__content {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+
+    &__line2 {
+      margin: 32px 0;
+    }
+  }
+}
+
+@media (max-width: 426px) {
+  .productDescription {
+    .filter {
+      font-size: 12px;
+
+      &__item summary {
+        gap: 5px;
+      }
+    }
   }
 }
