@@ -17,6 +17,9 @@ img {
   max-width: 100%;
   display: block; }
 
+.hidden {
+  display: none !important; }
+
 .container {
   max-width: 1140px !important;
   margin: 0 auto; }
@@ -24,6 +27,15 @@ img {
 .bigContainer {
   max-width: 1600px;
   margin: 0 auto; }
+
+.shoppingCartContainer__title {
+  text-align: center;
+  font-family: Lato, sans-serif;
+  font-style: normal;
+  line-height: normal;
+  font-weight: 400;
+  font-size: 24px;
+  margin-top: 60px; }
 
 @media (max-width: 1172px) {
   .container {
@@ -186,7 +198,7 @@ img {
   width: 232px;
   filter: drop-shadow(6px 4px 35px rgba(0, 0, 0, 0.21));
   padding: 32px 33px 21px 33px;
-  z-index: 3;
+  z-index: 5;
   visibility: hidden;
   opacity: 0;
   transition: visibility 0.3s linear, opacity 0.3s linear; }
@@ -363,6 +375,9 @@ img {
       font-size: 14px; }
       .catalogItems .catalogItem__button p {
         margin: 0; }
+      .catalogItems .catalogItem__button:hover {
+        background-color: #9F9F9F;
+        transition: background-color 0.5s ease; }
     .catalogItems .catalogItem__title {
       color: #000;
       font-family: Lato, sans-serif;
@@ -972,7 +987,7 @@ img {
   line-height: normal;
   font-weight: 400;
   font-size: 22px;
-  margin-top: 100px;
+  margin-top: 50px;
   margin-bottom: 100px;
   justify-content: space-between;
   align-items: flex-start; }
@@ -1087,7 +1102,9 @@ img {
         outline: none; }
     .shoppingCart .shoppingItem__price {
       color: #F16D7F; }
-    .shoppingCart .shoppingItem__data {
+    .shoppingCart .shoppingItem__color {
+      color: #6F6E6E; }
+    .shoppingCart .shoppingItem__size {
       color: #6F6E6E; }
     .shoppingCart .shoppingItem__quantity {
       width: 50px;
@@ -1214,15 +1231,15 @@ img {
     margin-left: 20px; }
     .registration__rightSide h1 {
       font-size: 24px;
-      margin-bottom: 25px; }
+      margin-bottom: 30px; }
     .registration__rightSide p {
-      margin-bottom: 25px; }
+      margin-bottom: 30px; }
     .registration__rightSide ul {
       margin: 0;
       padding: 0;
       list-style-type: none; }
     .registration__rightSide li {
-      padding-bottom: 15px; }
+      padding-bottom: 20px; }
     .registration__rightSide li:before {
       content: url("../img/checkmark.svg");
       margin-right: 20px; }
@@ -1324,7 +1341,12 @@ img {
     .regForm__button:hover svg path {
       fill: #FFF; }
 
-@media (max-width: 950px) {
+@media (max-width: 768px) {
+  .registration__rightSide {
+    font-size: 16px; }
+    .registration__rightSide h1 {
+      font-size: 16px; } }
+@media (max-width: 700px) {
   .registration {
     flex-direction: column;
     gap: 40px; }
@@ -1334,11 +1356,6 @@ img {
       max-width: none;
       width: 100%;
       margin-left: 0; } }
-@media (max-width: 768px) {
-  .registration__rightSide {
-    font-size: 16px; }
-    .registration__rightSide h1 {
-      font-size: 16px; } }
 .filter {
   font-size: 14px;
   color: #6f6e6e;
